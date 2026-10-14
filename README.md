@@ -1,71 +1,47 @@
-# test-manager-library-3145555-docs
+# Manager Library — Technical Assessment
 
-> **Prueba técnica · Ficha ADSO 3145555**
-> Horario: **miércoles 14 de octubre de 2026, de 6:50 a. m. a 11:00 a. m.** (hora Colombia). Entrega a las **11:00 a. m.**
+> **SDD technical assessment · ADSO group 3145555**
+>
+> Schedule: **Wednesday, October 14, 2026, from 6:50 a.m. to 11:00 a.m.** (Colombia time). Submission deadline: **11:00 a.m.**
 
-Este repositorio contiene el **spec** de *Manager Library*. Es el único con contenido: los otros cinco empiezan vacíos.
+This repository contains the specifications for **Manager Library**. The product manages a small library's catalog, members, loans, returns, overdue items, and most-borrowed report.
 
-## Instrucciones
+## Canonical implementation specification
 
-Cada aprendiz debe **crear el fork** de los seis repositorios del proyecto y **resolver el proyecto
-con el spec planteado**.
+The assessment must be implemented with **React** and **PHP/Laravel**. The canonical specification for that implementation is [`spec-laravel/`](spec-laravel/).
 
-1. Hacer fork, a su cuenta de GitHub, de cada repositorio de la tabla del final.
-2. Leer el spec en [`test-manager-library-3145555-docs`](https://github.com/code-sena/test-manager-library-3145555-docs).
-   Se entrega en dos versiones: `spec-python/` y `spec-.net/`.
-3. Desarrollar en los forks.
+Read it in this order:
 
-## El reto se desarrolla con React y PHP (Laravel)
+1. [`constitution.md`](spec-laravel/constitution.md) — non-negotiable engineering principles.
+2. [`spec.md`](spec-laravel/spec.md) — actors, scope, user stories, acceptance criteria, and business rules.
+3. [`plan.md`](spec-laravel/plan.md), [`architecture.md`](spec-laravel/architecture.md), and [`architecture-overview.md`](spec-laravel/architecture-overview.md) — implementation strategy and system boundaries.
+4. [`data-model.md`](spec-laravel/data-model.md) and [`api-contract.md`](spec-laravel/api-contract.md) — authoritative database model and HTTP contract.
+5. [`tasks.md`](spec-laravel/tasks.md) — implementation order and executable evidence.
+6. [`adr/`](spec-laravel/adr/) — accepted architecture decisions and documented specification conflicts.
 
-El spec está escrito para Python y para .NET, pero el reto **no** se hace en esos lenguajes:
+The existing [`spec-python/`](spec-python/) and [`spec-.net/`](spec-.net/) directories are reference specifications. They describe the same product but are not the assessment stack. They remain unchanged for traceability.
 
-| Capa | Tecnología del reto |
+## Product repositories
+
+| Repository | Responsibility |
 |---|---|
-| Frontend | React |
-| Backend | PHP con Laravel |
+| `test-manager-library-3145555-docs` | Canonical and reference specifications |
+| `test-manager-library-3145555-api` | PHP/Laravel backend |
+| `test-manager-library-3145555-app` | React operations application |
+| `test-manager-library-3145555-page` | Static public presentation site; it does not call the API |
+| `test-manager-library-3145555-infra` | Containers, network, volumes, and empty PostgreSQL engine |
+| `test-manager-library-3145555-tool` | Demonstration data seeder that uses the API |
 
-Lo que el spec define sobre el negocio —historias, criterios de aceptación, reglas, contrato de la
-API, modelo de datos— se respeta. Lo que define sobre la tecnología se traduce a React y Laravel.
+## Delivery rules
 
-## La prueba no consiste en escribir el código
+- Work in the six personal forks.
+- Keep `main` as the delivery branch and use short-lived branches with pull requests.
+- Use small, focused commits and push partial, verifiable progress frequently.
+- Code, identifiers, commit messages, and technical documentation are written in English.
+- User-facing messages remain in Spanish as required by the product contract.
+- Do not rename or add product tables, columns, request fields, or response fields.
+- Only work pushed before the deadline is evaluated.
 
-El propósito principal es ver la **capacidad de desempeño con SDD** (*Spec-Driven Development*,
-desarrollo guiado por especificación): cómo se lee, se interpreta y se aplica una especificación
-para llevarla a un stack distinto. El código es el medio, no el fin.
+## Scope protection
 
-## Entrega
-
-Cuenta lo que quede **subido a los forks antes de las 11:00 a. m.** Lo que llegue después no se revisa.
-No hay prórroga: suban avances parciales con commits pequeños durante la prueba.
-
-## Qué contiene este repositorio
-
-| Carpeta | Contenido |
-|---|---|
-| [`spec-python/`](spec-python/) | El spec de Manager Library escrito para un backend Python |
-| [`spec-.net/`](spec-.net/) | El mismo sistema especificado para un backend .NET |
-
-Las dos versiones describen el **mismo producto** (las mismas historias, reglas de negocio y
-endpoints); cambian las decisiones de tecnología. Ninguna de las dos es el stack del reto.
-
-## Cómo se lee el spec
-
-En cualquiera de las dos carpetas, en este orden:
-
-1. `constitution.md` — principios innegociables.
-2. `spec.md` — qué debe hacer el sistema: actores, historias, criterios de aceptación, reglas de negocio.
-3. `plan.md`, `architecture.md` y `arquitectura-panoramica.md` — cómo se construye.
-4. `data-model.md` y `api-contract.md` — el modelo de datos y el contrato de la API.
-5. `tasks.md` — qué hay que hacer y con qué evidencia se da por hecho.
-6. `adr/` — las decisiones de arquitectura, con sus alternativas y consecuencias.
-
-## Los seis repositorios
-
-| Repositorio | Qué va ahí |
-|---|---|
-| [`test-manager-library-3145555-docs`](https://github.com/code-sena/test-manager-library-3145555-docs) | El spec: `spec-python/` y `spec-.net/` |
-| [`test-manager-library-3145555-api`](https://github.com/code-sena/test-manager-library-3145555-api) | Backend en PHP (Laravel) |
-| [`test-manager-library-3145555-app`](https://github.com/code-sena/test-manager-library-3145555-app) | Frontend en React |
-| [`test-manager-library-3145555-page`](https://github.com/code-sena/test-manager-library-3145555-page) | Sitio público estático de presentación |
-| [`test-manager-library-3145555-infra`](https://github.com/code-sena/test-manager-library-3145555-infra) | Contenedores, red, volúmenes y motor de base de datos vacío |
-| [`test-manager-library-3145555-tool`](https://github.com/code-sena/test-manager-library-3145555-tool) | Utilidades: sembrador de datos de demostración |
+The Laravel specification translates technology, not product behavior. Fines, payments, reservations, renewals, email or SMS, bulk import, inter-branch loans, and additional book attributes are explicitly out of scope.
