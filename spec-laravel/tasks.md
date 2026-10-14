@@ -10,11 +10,11 @@ A task is complete only when its evidence exists and can be executed. Every task
 | T-04 | `Book` domain: withdraw, restock, total adjustment, and logical deletion | T-03 | Unit tests prove availability never leaves `0..total` |
 | T-05 | `Loan` domain: add item, return item, calculated status, 14-day due date, and 1..3 items | T-04 | Fake-clock tests cover `open`, `overdue`, and `closed` |
 | T-06 | `Member` and `User` domain behavior | T-03 | Tests prove `"Ana "` becomes `ana` and API creation cannot request `admin` |
-| T-07 | Authentication ports and `LoginService` / `CreateLibrarianService` | T-06 | US-01 and US-02 pass with fakes |
-| T-08 | Book create, search, replace, logical delete, and cover use cases | T-04 | US-03 and US-04 pass with fakes |
-| T-09 | `LendBooksService` | T-05, T-08 | US-06 tests cover duplicates, limits, overdue members, unavailable books, and rollback |
-| T-10 | Return-item and overdue use cases | T-09 | US-07 and US-09 pass; repeated return produces `ITEM_ALREADY_RETURNED` |
-| T-11 | Most-borrowed report service and `ReportReader` port | T-09 | US-10 passes; renaming a book does not change its historical report row |
+| T-07 | Authentication ports and `LoginService` / `CreateLibrarianService` | T-06 | HU-01 and HU-02 pass with fakes |
+| T-08 | Book create, search, replace, logical delete, and cover use cases | T-04 | HU-03 and HU-04 pass with fakes |
+| T-09 | `LendBooksService` | T-05, T-08 | HU-06 tests cover duplicates, limits, overdue members, unavailable books, and rollback |
+| T-10 | Return-item and overdue use cases | T-09 | HU-07 and HU-09 pass; repeated return produces `ITEM_ALREADY_RETURNED` |
+| T-11 | Most-borrowed report service and `ReportReader` port | T-09 | HU-10 passes; renaming a book does not change its historical report row |
 | T-12 | PostgreSQL adapters for books, members, and users | T-02, T-08 | Repository integration tests pass against PostgreSQL 16 |
 | T-13 | PostgreSQL loan adapter and conditional inventory concurrency | T-12, T-09 | Two simultaneous final-copy requests produce exactly one 201 and one 409 |
 | T-14 | Password hashing and JWT adapters | T-07 | Security test and log review prove secrets never appear in responses or logs |
@@ -40,16 +40,16 @@ The published create-loan contract accepts only `member_id` and `items`; the ser
 
 | Requirement | Primary tasks | Evidence type |
 |---|---|---|
-| US-01, US-02 | T-06, T-07, T-14, T-16, T-17 | Application, security, and contract tests |
-| US-03, US-04 | T-03, T-04, T-08, T-12, T-15, T-16 | Domain, integration, storage, and contract tests |
-| US-05 | T-06, T-12, T-16 | Application, integration, and contract tests |
-| US-06 | T-05, T-09, T-12, T-13, T-16 | Domain, transaction, concurrency, and contract tests |
-| US-07 | T-04, T-05, T-10, T-13, T-16 | Domain, transaction, and contract tests |
-| US-08 | T-05, T-12, T-16 | Fake-clock, integration, and contract tests |
-| US-09 | T-10, T-12, T-16 | Fake-clock, query, and contract tests |
-| US-10 | T-11, T-12, T-16 | Frozen-value, aggregate-query, and role tests |
-| NFR-1 | T-12, T-21 | Load test with 5,000 books |
-| NFR-2 | T-13 | Real PostgreSQL concurrency test |
-| NFR-3 | T-14, T-16 | Log and response security review |
-| NFR-4 | T-16 | Full error-contract suite |
-| NFR-5 | T-17, T-20 | Clean startup demonstration |
+| HU-01, HU-02 | T-06, T-07, T-14, T-16, T-17 | Application, security, and contract tests |
+| HU-03, HU-04 | T-03, T-04, T-08, T-12, T-15, T-16 | Domain, integration, storage, and contract tests |
+| HU-05 | T-06, T-12, T-16 | Application, integration, and contract tests |
+| HU-06 | T-05, T-09, T-12, T-13, T-16 | Domain, transaction, concurrency, and contract tests |
+| HU-07 | T-04, T-05, T-10, T-13, T-16 | Domain, transaction, and contract tests |
+| HU-08 | T-05, T-12, T-16 | Fake-clock, integration, and contract tests |
+| HU-09 | T-10, T-12, T-16 | Fake-clock, query, and contract tests |
+| HU-10 | T-11, T-12, T-16 | Frozen-value, aggregate-query, and role tests |
+| RNF-1 | T-12, T-21 | Load test with 5,000 books |
+| RNF-2 | T-13 | Real PostgreSQL concurrency test |
+| RNF-3 | T-14, T-16 | Log and response security review |
+| RNF-4 | T-16 | Full error-contract suite |
+| RNF-5 | T-17, T-20 | Clean startup demonstration |

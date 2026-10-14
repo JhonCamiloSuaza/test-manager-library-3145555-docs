@@ -60,20 +60,20 @@ Every error, including authentication, authorization, validation, missing routes
 
 | `code` | Status | Source |
 |---|---:|---|
-| `INVALID_CREDENTIALS` | 401 | AC-01.2 |
-| `FORBIDDEN_ROLE` | 403 | AC-01.3 |
+| `INVALID_CREDENTIALS` | 401 | CA-01.2 |
+| `FORBIDDEN_ROLE` | 403 | CA-01.3 |
 | `NOT_FOUND` | 404 | Missing resource |
-| `USERNAME_TAKEN` | 409 | AC-02.2 |
-| `ISBN_TAKEN` | 409 | AC-03.2 |
-| `DOCUMENT_TAKEN` | 409 | AC-05.1 |
-| `BOOK_HAS_OPEN_LOANS` | 409 | AC-03.5 |
-| `BOOK_NOT_AVAILABLE` | 409 | AC-06.3 |
-| `MEMBER_HAS_OVERDUE` | 409 | AC-06.5 |
-| `ITEM_ALREADY_RETURNED` | 409 | AC-07.2 |
-| `MEMBER_LIMIT_EXCEEDED` | 422 | AC-06.4 |
-| `DUPLICATE_BOOK_IN_LOAN` | 422 | AC-06.2 |
+| `USERNAME_TAKEN` | 409 | CA-02.2 |
+| `ISBN_TAKEN` | 409 | CA-03.2 |
+| `DOCUMENT_TAKEN` | 409 | CA-05.1 |
+| `BOOK_HAS_OPEN_LOANS` | 409 | CA-03.5 |
+| `BOOK_NOT_AVAILABLE` | 409 | CA-06.3 |
+| `MEMBER_HAS_OVERDUE` | 409 | CA-06.5 |
+| `ITEM_ALREADY_RETURNED` | 409 | CA-07.2 |
+| `MEMBER_LIMIT_EXCEEDED` | 422 | CA-06.4 |
+| `DUPLICATE_BOOK_IN_LOAN` | 422 | CA-06.2 |
 | `VALIDATION_ERROR` | 422 | Invalid request field |
-| `INVALID_DATE_RANGE` | 422 | AC-10.2 |
+| `INVALID_DATE_RANGE` | 422 | CA-10.2 |
 
 ## 2. Authentication and health
 
